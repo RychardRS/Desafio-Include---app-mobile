@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "configAmbiente",
-    "slug": "configAmbiente",
+    "name": "ambiente-react-native",
+    "slug": "ambiente-react-native",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
