@@ -26,10 +26,10 @@ export default function App() {
         onChangeText = {()=>{}}
         />
         <TouchableOpacity style={styles.bottom}>
-          <Text style={styles.bottomLogar}>Logar</Text>
+          <Text style={styles.bottomLogar}>Entrar</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.bottomRegister}>
-          <Text style={styles.bottomCad}>Cadastra-se</Text>
+        <TouchableOpacity style={styles.bottom}>
+          <Text style={styles.bottomCad}>Cadastrar-se</Text>
         </TouchableOpacity>
       </View>
     </KeyboardAvoidingView>
@@ -39,14 +39,16 @@ export default function App() {
 const styles = StyleSheet.create({
   telaLogin: {
     flexGrow: 1,
-    backgroundColor: '#FFF',
+    backgroundColor: '#D3D3D3',
     alignItems: 'center',
     justifyContent: 'center',
+    
   },
 
   img: {
     flexGrow: 1,
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginBottom: 30
   },
 
   designUsuario: {
@@ -54,7 +56,7 @@ const styles = StyleSheet.create({
     width:'90%',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingBottom: 150
+    paddingBottom: 20,
   },
   login: {
     backgroundColor: '#FFF',
@@ -63,25 +65,32 @@ const styles = StyleSheet.create({
     fontSize: 17,
     color: '#222',
     borderRadius: 7,
-    padding: 10
+    padding: 10,
   },
   bottom: {
     backgroundColor: '#35AAFF',
     width: '90%',
     height: 45,
+    marginBottom: 10,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 7
+    borderRadius: 7,
   },
   bottomLogar: {
-    color: 'FFF',
+    color: '000000',
     fontSize: 18
   },
   bottomRegister: {
-    marginTop: 10,
+    backgroundColor: '#00BFFF',
+    width: '90%',
+    height: 45,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 7,
   },
   bottomCad: {
-    color: '#191919',
+    color: 'FFF',
+    fontSize: 18,
   }
 });
 
