@@ -3,6 +3,11 @@ import { Button, View, Text, Image, StyleSheet, KeyboardAvoidingView, TextInput,
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Homepage from './routes/Homepage';
+import Cadastro from './routes/Cadastro';
+import ProfileMembro from './routes/ProfileMembro';
+import Tarefas from './routes/Tarefas';
+
+
 
 //criando o navigation
 
@@ -47,13 +52,13 @@ function Login({ navigation }) {
       <View style = {styles.bottomEntrar}>
       <Button
       //criando o botão e usando o stack navigation para redirecionar para outra rota
-        title="Entrar"
-        onPress={() => entrar(navigation.navigate('Homepage'))}
-      />
-      </View>
-      <View style = {styles.bottomRegistrar}>
-      <Button
         title="Cadastra-se"
+        onPress={() => entrar(navigation.navigate('Cadastro'))}
+        
+      />
+      <View style = {{paddingRight: 110}}></View>
+      <Button 
+        title="Entrar"
         onPress={() => entrar(navigation.navigate('Homepage'))}
       />
       </View>
@@ -70,7 +75,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#D3D3D3',
     alignItems: 'center',
     justifyContent: 'center',
-    
+
   },
 
   img: {
@@ -96,15 +101,13 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   bottomEntrar: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginVertical: 15
+    //alignItems: 'center',
+    marginBottom: 100,
+    //marginVertical: 15,
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+    
   },
-  bottomRegistrar: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: 40
-  }
 });
 
 //iniciando a função do stack navigator
@@ -117,6 +120,9 @@ function App() {
       <Stack.Navigator initialRouteName="Usuário">
         <Stack.Screen name="Usuário" component={Login} />
         <Stack.Screen name="Homepage" component={Homepage} />
+        <Stack.Screen name="Cadastro" component={Cadastro} />
+        <Stack.Screen name="ProfileMembro" component={ProfileMembro} />
+        <Stack.Screen name="Tarefas" component={Tarefas} />
       </Stack.Navigator>
     </NavigationContainer>
   );
