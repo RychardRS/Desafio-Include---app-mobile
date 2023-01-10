@@ -23,6 +23,7 @@ function Login({ navigation }) {
       Alert.alert("Usuário ou senha incorretos")
     }
   }
+
   //criando o corpo da tela de login
   return (
 
@@ -53,7 +54,7 @@ function Login({ navigation }) {
       <Button
       //criando o botão e usando o stack navigation para redirecionar para outra rota
         title="Cadastro"
-        onPress={() => entrar(navigation.navigate('Cadastro'))}
+        onPress={() => navigation.push('Cadastro')}
         color='#00008b'
       />
       <View style = {{paddingRight: 100}}></View>

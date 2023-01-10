@@ -1,35 +1,20 @@
-import React from 'react'
-import { Button } from 'react-native';
-import { StyleSheet, Text, KeyboardAvoidingView, Image, TextInput, TouchableOpacity, View } from 'react-native';
-import { StyleSheet, Text, KeyboardAvoidingView, TextInput, TouchableOpacity, View, SafeAreaView,  Switch } from 'react-native'
+import React, { useState } from 'react'
+import { StyleSheet, Text, KeyboardAvoidingView, TextInput, TouchableOpacity, View, SafeAreaView,  Switch, Button } from 'react-native'
 import {Picker} from '@react-native-picker/picker';
 import {Ionicons} from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons'; 
 
-
-export default function App() {
+export default function Cadastro({ navigation }) {
   const [input, setInput] = useState('');
   const [hidePass, setHidePass] = useState(true)
   const [selectedValue, setSelectedValue] = useState("java");
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
-
-  return (
-    <KeyboardAvoidingView style={styles.telaLogin}>
-      <View style={styles.header}>
-        <View style={{backgroundColor:"#003057", height: 100, width: 450}}>
-          <View style={styles.textoh}>
-            <View style={styles.seta}>
-              <AntDesign name="arrowleft" size={24} color="white"/>
-            </View>
-            <Text style={styles.textohi}>INCLUDE</Text>
-            <Text style={styles.textohc}>CADASTRO</Text>
-          </View>
-          
-        </View>
-      </View>
-      
+    return (
+      <KeyboardAvoidingView style={styles.telaLogin}>
       <View style={styles.designUsuario}>
+      <View style={styles.espaco}></View> 
+      <View style={styles.espaco}></View> 
        <View style= {styles.linha}>
         <Text style={styles.texton}>NOME</Text>
         <Text style={styles.textogg}>SOBRENOME</Text>
@@ -127,7 +112,7 @@ export default function App() {
     </View>
     <Text>ADMINISTRADOR</Text>
       </View>
-        <TouchableOpacity style={styles.bottom}>
+        <TouchableOpacity style={styles.bottom} onPress={() => navigation.push('Usuário')}> 
           <Text style={styles.bottomLogar}>ENVIAR</Text>
         </TouchableOpacity>
       </View>
@@ -297,23 +282,3 @@ const styles = StyleSheet.create({
     right:90
   }
 });
-
-
-export default function Cadastro({ navigation }) {
-    return (
-        //o código da tela de cadastro será colado aqui, já está no formato do navigation
-        //tem que lembrar que pra rodar corretamente, tem que ter uma tag Button, um comando
-        //onPress e um tittle, se não, o stack navigation não irá funcionar (pelo menos aqui só rodou assim)
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#D3D3D3'}}>
-        <Text>
-            Em desenvolvimento
-        </Text>
-        <Button
-        //isso vai mudar quando fizer a nova tela, é só para caráter ilustrativo
-          title='Finalizar Cadastro'
-          onPress={() => navigation.push('Usuário')}
-        />
-        
-      </View>
-    );
-  }
