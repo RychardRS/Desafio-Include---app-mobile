@@ -52,14 +52,15 @@ function Login({ navigation }) {
       <View style = {styles.bottomEntrar}>
       <Button
       //criando o botão e usando o stack navigation para redirecionar para outra rota
-        title="Cadastra-se"
+        title="Cadastro"
         onPress={() => entrar(navigation.navigate('Cadastro'))}
-        
+        color='#00008b'
       />
-      <View style = {{paddingRight: 110}}></View>
+      <View style = {{paddingRight: 100}}></View>
       <Button 
         title="Entrar"
         onPress={() => entrar(navigation.navigate('Homepage'))}
+        color='#00008b'
       />
       </View>
     </KeyboardAvoidingView>
@@ -93,7 +94,7 @@ const styles = StyleSheet.create({
   },
   login: {
     backgroundColor: '#FFF',
-    width:'90%',
+    width:'80%',
     marginBottom: 10,
     fontSize: 17,
     color: '#222',
