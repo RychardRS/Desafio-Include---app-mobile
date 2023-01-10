@@ -34,7 +34,7 @@ export default function Cadastro({ navigation }) {
           onChangeText = {()=>{}}
         />
       </View>
-    
+        
         <Text style={styles.textog}>USUÁRIO</Text>
         <View style={styles.espaco}></View> 
         <TextInput
@@ -92,7 +92,7 @@ export default function Cadastro({ navigation }) {
       </Picker>
         </View>
         <TextInput
-          style={styles.login2}
+          style={styles.login3}
           placeholder = "CARGO"
           autoCorrect = {false}
           onChangeText = {()=>{}}
@@ -101,16 +101,19 @@ export default function Cadastro({ navigation }) {
       <Text style={styles.nomefim}>+ DIRETORIA</Text> 
       <Text style={{color:'white', width:'100%', alignItems:'center', left:20}}>----------------------------------------------------------------------------------</Text>
       <View style={styles.lgl}>
-        <View style={{color:'green'}}>
+        <View style={{color:'green', bottom: 30}}>
       <Switch
         trackColor={{ false: "#767577", true: "#81b0ff" }}
         thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
         ios_backgroundColor="#3e3e3e"
         onValueChange={toggleSwitch}
         value={isEnabled}
+        
       />
     </View>
+    <View style ={{bottom: 30}}>
     <Text>ADMINISTRADOR</Text>
+    </View>
       </View>
         <TouchableOpacity style={styles.bottom} onPress={() => navigation.push('Usuário')}> 
           <Text style={styles.bottomLogar}>ENVIAR</Text>
@@ -144,6 +147,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   login1: {
+    top: 20,
     backgroundColor: '#FFF',
     width:'44%',
     marginBottom: 15,
@@ -155,6 +159,19 @@ const styles = StyleSheet.create({
     alignContent:'space-between'
   },
   login2: {
+    top: 20,
+    backgroundColor: '#FFF',
+    width:'44%',
+    marginBottom: 15,
+    fontSize: 17,
+    color: '#222',
+    borderRadius: 7,
+    left:3,
+    padding: 10,
+    alignContent:'space-between'
+  },
+  login3: {
+    top: 2,
     backgroundColor: '#FFF',
     width:'44%',
     marginBottom: 15,
@@ -166,6 +183,7 @@ const styles = StyleSheet.create({
     alignContent:'space-between'
   },
   bottom: {
+    bottom: 30,
     backgroundColor: '#003057',
     width: '30%',
     height: 45,
@@ -186,21 +204,26 @@ const styles = StyleSheet.create({
     right:138
   },
   texton:{ //nome
+    top: 20,
     right:145
   },
   textog:{ //usuario
+    top: 10,
     right:132
   },
   textoe:{ //email
+    top: 10,
     right:140
   },
   textogg:{ //sobrenome
+    top: 20,
     right:22
   },
   textod:{ //diretoria
     right:175
   },
   login: {
+    top: 10,
     backgroundColor: '#FFF',
     width:'90%',
     marginBottom: 15,
